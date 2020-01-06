@@ -1,0 +1,7 @@
+FROM logicalspark/docker-tikaserver:latest
+
+RUN apt-get update
+RUN apt-get install -y tesseract-ocr-jpn tesseract-ocr-jpn-vert
+
+EXPOSE 9998
+ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
